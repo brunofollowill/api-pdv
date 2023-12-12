@@ -12,8 +12,8 @@ function getDataId(id) {
 
 function insertData(newdata) {
   const datas = JSON.parse(fs.readFileSync("data.json"));
-  const newlistDado = [...datas, newdata];
-  fs.writeFileSync("data.json", JSON.stringify(newlistDado));
+  const newlistData = [...datas, newdata];
+  fs.writeFileSync("data.json", JSON.stringify(newlistData));
 }
 
 function modificationData(modification, id) {
@@ -26,7 +26,7 @@ function modificationData(modification, id) {
   fs.writeFileSync("data.json", JSON.stringify(currentDatas));
 }
 
-function deleteData(id) {
+function deleteDataId(id) {
   const datas = JSON.parse(fs.readFileSync("data.json"));
 
   const filterData = datas.filter((data) => data.id !== id);
@@ -38,5 +38,5 @@ module.exports = {
   getDataId,
   insertData,
   modificationData,
-  deleteData,
+  deleteDataId,
 };

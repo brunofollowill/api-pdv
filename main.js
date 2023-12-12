@@ -6,7 +6,7 @@ main.use(express.json());
 
 const port = 8000;
 
-main.use("/", routerData);
+main.use("/datas", routerData);
 
 main.listen(port, () => {
   console.log(`Escutando a porta... ${port}`);
